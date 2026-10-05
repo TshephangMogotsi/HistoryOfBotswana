@@ -1,0 +1,57 @@
+[
+  {
+    "id": "botswana-notes-records-index-1969-2006",
+    "kind": "bibliographic-index",
+    "label": "Botswana Notes & Records index, volumes 1–38",
+    "downloadUrl": "https://www.thebotswanasociety.net/_files/ugd/17e505_3056b2b8e0c048ddab067d3573e91876.xlsx?dn=The+Botswana+Society+Publications+Indice",
+    "localFile": "data/raw/botswana-notes-records-index-1969-2006.xlsx",
+    "landingPage": "https://www.thebotswanasociety.net/botswana-notes-records",
+    "licenseNote": "Use the index as a discovery aid; verify article access and reuse rights before republishing text."
+  },
+  {
+    "id": "botswana-notes-records-index-recent",
+    "kind": "bibliographic-index",
+    "label": "Botswana Notes & Records subject indexes",
+    "downloadUrl": "https://www.thebotswanasociety.net/_files/ugd/752ba0_bdab182cb9bd4ff9a7ab4ee502f444d1.xlsx?dn=Botswana+Society+Publications+Indices+19",
+    "localFile": "data/raw/botswana-notes-records-index-recent.xlsx",
+    "landingPage": "https://www.thebotswanasociety.net/botswana-notes-records",
+    "licenseNote": "This workbook overlaps the historical index; the extractor deduplicates matching records."
+  },
+  {
+    "id": "dailynews-archive",
+    "kind": "newspaper-archive",
+    "label": "Botswana DailyNews newspaper PDF archive",
+    "landingPage": "https://dailynews.gov.bw/index.php/dailynews_pdf?page=3",
+    "access": "Search and download issues by date; no bulk event dataset is supplied."
+  },
+  {
+    "id": "dailynews-article-categories",
+    "kind": "newspaper-articles",
+    "label": "Botswana DailyNews article categories",
+    "landingPage": "https://dailynews.gov.bw/news-list/srccategory/33/1",
+    "access": "Dated article pages grouped by crime, elections, politics, development, culture, parliament, and general news."
+  },
+  {
+    "id": "statistics-botswana-data-portal",
+    "kind": "official-statistics",
+    "label": "Statistics Botswana Data Portal",
+    "landingPage": "https://www.statsbots.org.bw/data-portal",
+    "access": "Aggregate tables, charts, exports, metadata, and web services."
+  },
+  {
+    "id": "statistics-botswana-microdata",
+    "kind": "microdata-catalog",
+    "label": "Statistics Botswana Microdata Portal",
+    "downloadUrl": "https://microdata.statsbots.org.bw/index.php/api/catalog/search?ps=5000",
+    "localFile": "data/raw/statistics-botswana-catalog.json",
+    "landingPage": "https://microdata.statsbots.org.bw/",
+    "access": "Public-use and restricted census and survey files; registration may be required."
+  },
+  {
+    "id": "ipums-ihgis",
+    "kind": "census-and-boundaries",
+    "label": "IPUMS International Historical Geographic Information System",
+    "landingPage": "https://www.ipums.org/projects/ipums-ihgis",
+    "access": "Downloadable census tables and historical boundary files."
+  }
+]

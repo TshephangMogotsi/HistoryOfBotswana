@@ -1,0 +1,14 @@
+{
+  "name": "ruler",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "python3 -m http.server 4173 --bind 127.0.0.1",
+    "check": "node --check script.js",
+    "extract:bnr": "python3 scripts/extract-bnr-index.py",
+    "extract:statsbots": "python3 scripts/extract-statsbots-catalog.py",
+    "harvest:dailynews": "python3 scripts/harvest-dailynews-leads.py",
+    "select:monthly": "python3 scripts/select-monthly-dailynews.py",
+    "build:dailynews": "python3 scripts/build-dailynews-events.py"
+  }
+}

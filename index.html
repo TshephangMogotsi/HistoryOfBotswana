@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0b0b0b" />
+    <title>Ruler</title>
+    <link rel="stylesheet" href="./styles.css?v=20261005-scrolltoggle1" />
+    <script src="./data/processed/dailynews-events.js?v=20261004" defer></script>
+    <script src="./events.js?v=20261004" defer></script>
+    <script src="./script.js?v=20261005-scrolltoggle1" defer></script>
+  </head>
+  <body>
+    <main>
+      <div class="timeline-controls">
+        <button id="scroll-mode-toggle" type="button" aria-pressed="true" aria-label="Switch scroll acceleration mode">BOOST SCROLL</button>
+      </div>
+      <section class="event-stage" id="event-stage" aria-live="polite" hidden>
+        <aside class="event-neighbor event-neighbor--previous" id="event-previous" aria-label="Previous event" hidden>
+          <p class="event-neighbor__kicker" id="event-previous-kicker"></p>
+          <h2 class="event-neighbor__title" id="event-previous-title"></h2>
+          <p class="event-neighbor__date" id="event-previous-date"></p>
+        </aside>
+        <article class="event-card" id="event-card" aria-label="Current timeline event">
+          <div class="event-card__visual" aria-hidden="true">
+            <span class="event-card__pin"></span>
+            <span class="event-card__location-mark" id="event-card-location-mark">BOTSWANA</span>
+          </div>
+          <div class="event-card__body">
+            <div class="event-card__header">
+              <p class="event-card__kicker" id="event-card-kicker">EVENT</p>
+              <span class="event-card__badge" id="event-card-badge">VERIFIED</span>
+            </div>
+            <h1 class="event-card__title" id="event-card-title"></h1>
+            <div class="event-card__meta">
+              <time class="event-card__date" id="event-card-date"></time>
+              <span class="event-card__location" id="event-card-location"></span>
+            </div>
+            <p class="event-card__summary" id="event-card-summary"></p>
+            <div class="event-card__sources">
+              <p class="event-card__sources-label">SOURCES</p>
+              <ul class="event-card__source-list" id="event-card-sources"></ul>
+            </div>
+          </div>
+        </article>
+        <aside class="event-neighbor event-neighbor--next" id="event-next" aria-label="Next event" hidden>
+          <p class="event-neighbor__kicker" id="event-next-kicker"></p>
+          <h2 class="event-neighbor__title" id="event-next-title"></h2>
+          <p class="event-neighbor__date" id="event-next-date"></p>
+        </aside>
+      </section>
+      <svg
+        class="ruler"
+        id="ruler"
+        viewBox="0 0 1200 240"
+        role="slider"
+        tabindex="0"
+        aria-label="Ruler position"
+        aria-description="Scroll to move through months. One documented event is shown per month when available. Pinch or hold Control while scrolling to zoom into days. Plus and minus keys also zoom."
+        aria-orientation="horizontal"
+        aria-valuemin="0"
+        aria-valuemax="1703"
+        aria-valuenow="1701"
+        aria-valuetext="October 2026"
+      >
+        <title>Interactive ruler</title>
+        <desc>Starts at today's date. Scroll through Botswana's history. One curated record or newspaper lead sits above each available month. Pinch or use Control plus scroll to zoom from months into days.</desc>
+        <defs>
+        </defs>
+        <text id="event-readout" x="600" y="18" fill="#8fa8ff" font-size="11" font-weight="600" letter-spacing="1.4" text-anchor="middle" aria-live="polite"></text>
+        <text id="date-readout" x="600" y="42" fill="#f0f0f2" font-size="20" font-weight="600" letter-spacing="2.4" text-anchor="middle" aria-hidden="true">OCT 2026</text>
+        <g id="event-track"></g>
+        <g id="month-track" aria-hidden="true"></g>
+        <g id="day-track" aria-hidden="true" opacity="0"></g>
+      </svg>
+    </main>
+  </body>
+</html>

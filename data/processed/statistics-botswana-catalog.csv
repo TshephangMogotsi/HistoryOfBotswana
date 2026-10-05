@@ -1,0 +1,48 @@
+id,idno,type,title,nation,authoring_entity,form_model,year_start,year_end,url
+58,bwa-sb-bqmts-2023q3,survey,Botswana Quarterly Multi-Topic Household Survey: Labour Force Module Q3 2023,Botswana,Statistics Botswana,public,2024,2024,https://microdata.statsbots.org.bw/index.php/catalog/58
+56,bwa-sb-bqmts-q12024,survey,Botswana Quarterly Multi-Topic Survey: Labour Force Module Quarter 1 2024,Botswana,Statistics Botswana,public,2024,2024,https://microdata.statsbots.org.bw/index.php/catalog/56
+59,bwa-sb-vital-2023,survey,"Botswana Vital Statistics 2023 (Births,Deaths,Marriages)",Botswana,Statistics Botswana,public,2023,2023,https://microdata.statsbots.org.bw/index.php/catalog/59
+42,bwa-sb-neus-2022,survey,Botswana National Energy Use Survey 2022,Botswana,Statistics Botswana,public,2022,2023,https://microdata.statsbots.org.bw/index.php/catalog/42
+53,bwa-sb-bqmts-q42022,survey,Botswana Quarterly Multi-Topic Survey:Labour Force Module Quarter 4 2022,Botswana,Statistics Botswana,public,2022,2022,https://microdata.statsbots.org.bw/index.php/catalog/53
+60,bwa-sb-vital-2022,survey,"Botswana Vital Statistics 2022 (Births,Deaths,Marriages)",Botswana,Statistics Botswana,public,2022,2022,https://microdata.statsbots.org.bw/index.php/catalog/60
+26,bwa-nahpa-BAISV-2021-v02,survey,Botswana AIDS Impact Survey V 2021,Botswana,"Selato, Robert, Matroos, Susan, Mine, Madisa, Lekone, Phenyo, Bodika, Stephane, Charurat, Manhattan",public,2021,2021,https://microdata.statsbots.org.bw/index.php/catalog/26
+33,BWA-SB-BAISV-2021-geo,survey,Botswana Population-based HIV Impact Assessment 2021 Geospatial Data,Botswana,,licensed,2021,2021,https://microdata.statsbots.org.bw/index.php/catalog/33
+54,bwa-sb-bqmts-q42021,survey,Botswana Quarterly Multi-Topic Survey:Labour Force Module  Quarter 4 2021,Botswana,Statistics Botswana,public,2021,2021,https://microdata.statsbots.org.bw/index.php/catalog/54
+61,bwa-sb-vital-2021,survey,"Botswana Vital Statistics 2021 (Births,Deaths,Marriages)",Botswana,Statistics Botswana,public,2021,2021,https://microdata.statsbots.org.bw/index.php/catalog/61
+49,bwa-sb-bqmts-q12020,survey,Botswana Quarterly Multi-Topic Survey: Labour Force Module Quarter 1 2020,Botswana,Statistics Botswana,public,2020,2020,https://microdata.statsbots.org.bw/index.php/catalog/49
+51,bwa-sb-bqmts-q42020,survey,Botswana Quarterly Multi-Topic Survey: Labour Force Module Quarter 4 2020,Botswana,Statistics Botswana,public,2020,2020,https://microdata.statsbots.org.bw/index.php/catalog/51
+63,bwa-sb-vital-2020,survey,"Botswana Vital Statistics 2020 (Births,Deaths,Marriages)",Botswana,Statistics Botswana,public,2020,2020,https://microdata.statsbots.org.bw/index.php/catalog/63
+48,bwa-sb-bqmts-q42019,survey,Botswana Quarterly Multi-Topic Survey:Labour Force Module  Quarter 4 2019,Botswana,Statistics Botswana,public,2019,2019,https://microdata.statsbots.org.bw/index.php/catalog/48
+44,bwa-sb-bqmts-q32019,survey,Botswana Quarterly Multi-Topic Survey:Labour Force Module Quarter 3 2019,Botswana,Statistics Botswana,public,2019,2019,https://microdata.statsbots.org.bw/index.php/catalog/44
+64,bwa-sb-vital-2019,survey,"Botswana Vital Statistics 2019 (Births, Deaths, Marriages)",Botswana,"Department of Civil and National Registration office (CNR), Statistics Botswana",public,2019,2019,https://microdata.statsbots.org.bw/index.php/catalog/64
+65,bwa-sb-vital-2018,survey,"Botswana Vital Statistics 2018 (Births,Deaths,Marriages)",Botswana,Statistics Botswana,public,2018,2018,https://microdata.statsbots.org.bw/index.php/catalog/65
+68,bwa-sb-vital-2017,survey,"Botswana Vital Statistics 2017 (Births,Deaths,Marriages)",Botswana,Statistics Botswana,public,2017,2017,https://microdata.statsbots.org.bw/index.php/catalog/68
+73,bwa-sb-vital-2016,survey,"Botswana Vital Statistics 2016 (Births, Deaths, Marriages)",Botswana,"Civil and National Registration Office, Ministry of Health and wellness (MOHW)",public,2016,2016,https://microdata.statsbots.org.bw/index.php/catalog/73
+31,bwa-sb-bac-2015-v1,survey,Botswana Agriculture Census 2015,Botswana,"Statistics Botswana, Ministry of Agriculture ",public,2015,2015,https://microdata.statsbots.org.bw/index.php/catalog/31
+19,BWA-SB-BMTHS-2015-2016-v01,survey,Botswana Multi-Topic Household Survey Report 2015/16,Botswana,Statistics Botswana,public,2015,2016,https://microdata.statsbots.org.bw/index.php/catalog/19
+71,bwa-sb-vital-2015,survey,"Botswana Vital Statistics 2015 (Births, Deaths, Marriages)",Botswana,"Civil and National Registration Office, Ministry of Health and wellness (MOHW)",public,2015,2015,https://microdata.statsbots.org.bw/index.php/catalog/71
+35,bwa-sb-ict-2014,survey,"Botswana Information,Communication and Technology Household Survey 2014",Botswana,Statistics Botswana,public,2014,2015,https://microdata.statsbots.org.bw/index.php/catalog/35
+69,bwa-sb-vital-2014,survey,"Botswana Vital Statistics 2014 (Births, Deaths, Marriages)",Botswana,"Ministry of Health and wellness (MOHW), Department of Civil and National Registration office (CNR)",public,2014,2014,https://microdata.statsbots.org.bw/index.php/catalog/69
+14,bwa-sb-bais-2013-v1,survey,Botswana AIDS Impact Survey IV 2013,Botswana,"Statistics Botswana, National AIDS Coordinating Agency (NACA)",public,2013,2013,https://microdata.statsbots.org.bw/index.php/catalog/14
+66,bwa-sb-vital-2013,survey,"Botswana Vital Statistics 2013 (Births, Deaths, Marriages)",Botswana,Statistics Botswana,public,2013,2013,https://microdata.statsbots.org.bw/index.php/catalog/66
+70,bwa-sb-vital-2012,survey,"Botswana Vital Statistics 2012 (Births, Deaths, Marriages)",Botswana,"Ministry of Health, Department of Civil and National Registration office ",public,2012,2012,https://microdata.statsbots.org.bw/index.php/catalog/70
+72,bwa-sb-vital-2011,survey,"Botswana Vital Statistics 2011 (Births, Deaths, Marriages)",Botswana,Statistics Botswana,public,2011,2011,https://microdata.statsbots.org.bw/index.php/catalog/72
+15,bwa-sb-phc-2011-v1,survey,Population and Housing Census 2011,Botswana,Statistics Botswana,public,2011,2011,https://microdata.statsbots.org.bw/index.php/catalog/15
+57,bwa-sb-bcwis-2009-2010-v01,survey,Botswana Core Welfare Indicators Survey 2009/10,Botswana,Statistics Botswana,public,2009,2010,https://microdata.statsbots.org.bw/index.php/catalog/57
+13,bwa-cso-bais-2008-v1,survey,Botswana AIDS Impact Survey III 2008,Botswana,"Statistics Botswana, National AIDS Coordinating Agency (NACA)",public,2008,2008,https://microdata.statsbots.org.bw/index.php/catalog/13
+9,bwa-sb-bfhs-2007-2008-v1,survey,Botswana Family Health Survey 2007-2008,Botswana,Central Statistics Office [now Statistics Botswana],public,2007,2008,https://microdata.statsbots.org.bw/index.php/catalog/9
+12,BWA_2007_ISS_v01_M,survey,Botswana Informal Sector Survey 2007,Botswana,Central Statistics Office (CSO),public,2007,2007,https://microdata.statsbots.org.bw/index.php/catalog/12
+4,bwa-sb-lfs-2005-2006-v1,survey,Botswana Labour Force Survey 2005-2006,Botswana,Central Statistics Office (now Statistics Botswana),public,2005,2006,https://microdata.statsbots.org.bw/index.php/catalog/4
+1,bwa-sb-bais-2004-v1,survey,Botswana AIDS Impact Survey II 2004,Botswana,"Central Statistics Office (CSO), National AIDS Coordinating Agency (NACA)",public,2004,2004,https://microdata.statsbots.org.bw/index.php/catalog/1
+3,bwa-cso-hies-2002-2003-v1,survey,Botswana Household Income and Expenditure Survey 2002-2003,Botswana,Central Statistics Office (CSO),public,2002,2003,https://microdata.statsbots.org.bw/index.php/catalog/3
+11,BWA_2001_AIS-I_v01_M,survey,Botswana AIDS Impact Survey 2001,Botswana,Central Statistics Office (CSO),public,2001,2001,https://microdata.statsbots.org.bw/index.php/catalog/11
+5,bwa-sb-phc-2001-v1,survey,Population and Housing Census 2001,Botswana,Central Statistics Office (CSO) [now Statistics Botswana],public,2001,2001,https://microdata.statsbots.org.bw/index.php/catalog/5
+10,BWA_1995_LFS_v01_M,survey,Botswana Labor Force Survey 1995-1996,Botswana,Central Statistics Office (CSO),public,1995,1996,https://microdata.statsbots.org.bw/index.php/catalog/10
+30,bwa-sb-bds-2017-v1,survey,Botswana Demographic Survey Report 2017,Botswana,Statistics Botswana,public,24,30,https://microdata.statsbots.org.bw/index.php/catalog/30
+38,bwa-sb-phc-2022,survey,Botswana Population and Housing Census 2022,Botswana,"Statistics Botswana, ",public,0,0,https://microdata.statsbots.org.bw/index.php/catalog/38
+79,bwa-sb-biva-2018,survey,Botswana: International Visitor Arrivals 2018,Botswana,Department of Immigration and Citizenship,public,0,0,https://microdata.statsbots.org.bw/index.php/catalog/79
+78,bwa-sb-biva-2019,survey,Botswana: International Visitor Arrivals 2019,Botswana,Department of Immigration and Citizenship,public,0,0,https://microdata.statsbots.org.bw/index.php/catalog/78
+77,bwa-sb-biva-2021,survey,Botswana: International Visitor Arrivals 2021,Botswana,Department of Immigration and Citizenship,public,0,0,https://microdata.statsbots.org.bw/index.php/catalog/77
+76,bwa-sb-biva-2022,survey,Botswana: International Visitor Arrivals 2022,Botswana,Department of Immigration and Citizenship,public,0,0,https://microdata.statsbots.org.bw/index.php/catalog/76
+75,bwa-sb-biva-2023,survey,Botswana: International Visitor Arrivals 2023,Botswana,Department of Immigration and Citizenship,public,0,0,https://microdata.statsbots.org.bw/index.php/catalog/75
+74,bwa-sb-biva-2024,survey,Botswana: International Visitor Arrivals 2024,Botswana,Department of Immigration and Citizenship,public,0,0,https://microdata.statsbots.org.bw/index.php/catalog/74
