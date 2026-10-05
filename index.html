@@ -5,18 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#0b0b0b" />
     <title>Ruler</title>
-    <link rel="stylesheet" href="./styles.css?v=20261005-a11y1" />
+    <link rel="stylesheet" href="./styles.css?v=20261005-ui-nav20" />
     <script src="./data/processed/dailynews-events.js?v=20261004" defer></script>
     <script src="./events.js?v=20261004" defer></script>
-    <script src="./script.js?v=20261005-a11y1" defer></script>
+    <script src="./script.js?v=20261005-ui-nav22" defer></script>
   </head>
   <body>
     <main>
-      <div class="timeline-controls">
-        <button id="scroll-mode-toggle" type="button" aria-pressed="true" aria-label="Switch scroll acceleration mode">BOOST SCROLL</button>
-      </div>
       <section class="event-stage" id="event-stage" hidden>
-        <aside class="event-neighbor event-neighbor--previous" id="event-previous" aria-label="Previous event" hidden>
+        <aside class="event-neighbor event-neighbor--previous" id="event-previous" role="button" tabindex="0" aria-label="Previous event" hidden>
           <p class="event-neighbor__kicker" id="event-previous-kicker"></p>
           <h2 class="event-neighbor__title" id="event-previous-title"></h2>
           <p class="event-neighbor__date" id="event-previous-date"></p>
@@ -29,7 +26,6 @@
           <div class="event-card__body">
             <div class="event-card__header">
               <p class="event-card__kicker" id="event-card-kicker">EVENT</p>
-              <span class="event-card__badge" id="event-card-badge">VERIFIED</span>
             </div>
             <h1 class="event-card__title" id="event-card-title"></h1>
             <div class="event-card__meta">
@@ -37,26 +33,46 @@
               <span class="event-card__location" id="event-card-location"></span>
             </div>
             <p class="event-card__summary" id="event-card-summary"></p>
-            <div class="event-card__sources">
-              <p class="event-card__sources-label">SOURCES</p>
-              <ul class="event-card__source-list" id="event-card-sources"></ul>
+            <div class="event-card__footer">
+              <details class="event-card__sources" id="event-card-source-details">
+                <summary id="event-card-source-label">Sources</summary>
+                <span class="event-card__badge" id="event-card-badge">VERIFIED</span>
+                <ul class="event-card__source-list" id="event-card-sources"></ul>
+              </details>
             </div>
           </div>
         </article>
-        <aside class="event-neighbor event-neighbor--next" id="event-next" aria-label="Next event" hidden>
+        <aside class="event-neighbor event-neighbor--next" id="event-next" role="button" tabindex="0" aria-label="Next event" hidden>
           <p class="event-neighbor__kicker" id="event-next-kicker"></p>
           <h2 class="event-neighbor__title" id="event-next-title"></h2>
           <p class="event-neighbor__date" id="event-next-date"></p>
         </aside>
       </section>
+      <section class="timeline" aria-label="Browse Botswana's history">
+        <nav class="timeline-navigation" aria-label="Event navigation">
+          <button class="event-step" id="previous-event-button" type="button" aria-label="Previous event" title="Previous event"><span aria-hidden="true">←</span><span class="navigation-label">Previous event</span></button>
+          <div class="date-controls">
+            <div class="date-controls__readout">
+              <button class="month-step" id="previous-month-button" type="button" aria-label="Previous month" hidden><span aria-hidden="true">‹</span><span class="navigation-label">Previous month</span></button>
+              <button class="date-button" id="date-readout" type="button" title="Jump to date" aria-haspopup="dialog" aria-controls="date-picker">
+                <span id="date-text">OCT 2026</span>
+                <span class="date-button__hint" aria-hidden="true">⌄</span>
+              </button>
+              <button class="month-step" id="next-month-button" type="button" aria-label="Next month" hidden><span aria-hidden="true">›</span><span class="navigation-label">Next month</span></button>
+            </div>
+          </div>
+          <p class="event-progress" id="event-progress">Loading events</p>
+          <button class="event-step" id="next-event-button" type="button" aria-label="Next event" title="Next event"><span aria-hidden="true">→</span><span class="navigation-label">Next event</span></button>
+        </nav>
       <svg
         class="ruler"
         id="ruler"
-        viewBox="0 0 1200 240"
+        viewBox="0 58 1200 176"
+        preserveAspectRatio="none"
         role="slider"
         tabindex="0"
-        aria-label="Ruler position"
-        aria-description="Scroll to move through months. One documented event is shown per month when available. Pinch or hold Control while scrolling to zoom into days. Plus and minus keys also zoom."
+        aria-label="Selected date in Botswana's history"
+        aria-description="Left and right arrow keys and previous and next event buttons jump directly between stories. Scrolling skips gaps of up to three empty months; longer gaps retain each month. Day scrolling includes every day. Up and down arrow keys follow the scroll behaviour. Dots mark events. Shift with an arrow jumps a year, Page Up or Down a decade. Pinch or Control-scroll to zoom into days. Plus and minus keys also zoom."
         aria-orientation="horizontal"
         aria-valuemin="0"
         aria-valuemax="0"
@@ -64,15 +80,45 @@
         aria-valuetext="Loading timeline"
       >
         <title>Interactive ruler</title>
-        <desc>Starts at today's date. Scroll through Botswana's history. One curated record or newspaper lead sits above each available month. Pinch or use Control plus scroll to zoom from months into days.</desc>
+        <desc>Starts at the latest recorded event. Month view skips short gaps of up to three empty months while preserving longer gaps. Day view shows the selected month and bounces at its first and last day. Pinch or Control plus scroll zooms into days.</desc>
         <defs>
         </defs>
         <text id="event-readout" x="600" y="18" fill="#8fa8ff" font-size="11" font-weight="600" letter-spacing="1.4" text-anchor="middle" aria-hidden="true"></text>
-        <text id="date-readout" x="600" y="42" fill="#f0f0f2" font-size="20" font-weight="600" letter-spacing="2.4" text-anchor="middle" aria-hidden="true">OCT 2026</text>
+        <g id="landmark-track"></g>
         <g id="event-track"></g>
         <g id="month-track" aria-hidden="true"></g>
         <g id="day-track" aria-hidden="true" opacity="0"></g>
       </svg>
+        <div class="timeline-footer">
+          <p class="timeline-hint sr-only" id="timeline-hint">Scroll through time <span aria-hidden="true">·</span> Short gaps are skipped</p>
+          <div class="view-switch" role="group" aria-label="Timeline view">
+            <button id="months-view-button" type="button" aria-pressed="true">Months</button>
+            <button id="days-view-button" type="button" aria-pressed="false">Days</button>
+          </div>
+          <details class="landmark-menu" id="landmark-menu">
+            <summary>Landmarks</summary>
+            <nav class="landmark-links" id="landmark-links" aria-label="Historical landmarks"></nav>
+          </details>
+        </div>
+      </section>
+      <dialog class="date-picker" id="date-picker" aria-labelledby="date-picker-title">
+        <form id="date-picker-form" novalidate>
+          <div class="date-picker__header">
+            <h2 id="date-picker-title">Jump to a date</h2>
+            <button id="date-picker-cancel" type="button" aria-label="Close date picker">×</button>
+          </div>
+          <p class="date-picker__range" id="date-picker-range"></p>
+          <div class="date-picker__fields">
+            <label for="date-picker-month">Month<select id="date-picker-month" name="month"></select></label>
+            <label for="date-picker-year">Year<input id="date-picker-year" name="year" type="number" inputmode="numeric" required aria-describedby="date-picker-message" /></label>
+          </div>
+          <p class="date-picker__message" id="date-picker-message"></p>
+          <div class="date-picker__actions">
+            <button id="today-button" type="button">Latest event</button>
+            <button class="date-picker__jump" type="submit">Go to date <span aria-hidden="true">→</span></button>
+          </div>
+        </form>
+      </dialog>
       <p class="sr-only" id="timeline-announcer" aria-live="polite" aria-atomic="true"></p>
     </main>
   </body>
