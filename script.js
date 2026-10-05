@@ -29,6 +29,7 @@ const monthTrack = document.querySelector("#month-track");
 const dayTrack = document.querySelector("#day-track");
 const eventReadout = document.querySelector("#event-readout");
 const dateReadout = document.querySelector("#date-readout");
+const timelineAnnouncer = document.querySelector("#timeline-announcer");
 const eventStage = document.querySelector("#event-stage");
 const eventCard = document.querySelector("#event-card");
 const eventCardKicker = document.querySelector("#event-card-kicker");
@@ -50,8 +51,6 @@ const nextEventDate = document.querySelector("#event-next-date");
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 const historicalEvents = Array.isArray(window.BOTSWANA_EVENTS) ? window.BOTSWANA_EVENTS : [];
 
-ruler.setAttribute("aria-valuemax", String(MONTH_COUNT));
-
 let targetMonth = INITIAL_MONTH;
 let displayedMonth = targetMonth;
 let targetDay = INITIAL_DAY;
@@ -70,6 +69,11 @@ let dayScrollRemainder = 0;
 let monthTicks = [];
 let dayTicks = [];
 let eventMarkers = [];
+let announceTimer = 0;
+let pendingAnnouncement = null;
+let lastAnnouncedKey = "";
+
+const LIVE_ANNOUNCE_DELAY = 280;
 
 function svgElement(name, attributes = {}) {
   const element = document.createElementNS(NS, name);
@@ -113,6 +117,23 @@ function effectiveScrollDelta(delta) {
 function updateScrollModeToggle() {
   scrollModeToggle.textContent = acceleratedScrolling ? "BOOST SCROLL" : "DIRECT SCROLL";
   scrollModeToggle.setAttribute("aria-pressed", String(acceleratedScrolling));
+}
+
+function scheduleTimelineAnnouncement(key, text) {
+  if (!timelineAnnouncer || key === lastAnnouncedKey) return;
+  if (pendingAnnouncement && pendingAnnouncement.key === key) return;
+  pendingAnnouncement = { key, text };
+  window.clearTimeout(announceTimer);
+  announceTimer = window.setTimeout(() => {
+    if (!pendingAnnouncement || pendingAnnouncement.key === lastAnnouncedKey) return;
+    const announcement = pendingAnnouncement;
+    pendingAnnouncement = null;
+    lastAnnouncedKey = announcement.key;
+    timelineAnnouncer.textContent = "";
+    window.requestAnimationFrame(() => {
+      timelineAnnouncer.textContent = announcement.text;
+    });
+  }, LIVE_ANNOUNCE_DELAY);
 }
 
 function signalAmplitude(index) {
@@ -517,8 +538,19 @@ function render() {
     ? `${MONTHS[dateForMonth(roundedMonth).month]} ${roundedDay}, ${dateForMonth(roundedMonth).year}`
     : `${MONTHS[dateForMonth(roundedMonth).month]} ${dateForMonth(roundedMonth).year}`;
   dateReadout.textContent = monthText;
+  ruler.setAttribute("aria-valuemin", "0");
+  ruler.setAttribute("aria-valuemax", String(MONTH_COUNT));
   ruler.setAttribute("aria-valuenow", String(roundedMonth));
   ruler.setAttribute("aria-valuetext", ariaText);
+
+  const activeMarker = eventMarkers.find((marker) => Math.floor(marker.position) === roundedMonth);
+  const eventSuffix = activeMarker
+    ? `. Event: ${activeMarker.event.title}`
+    : ". No documented event for this period";
+  scheduleTimelineAnnouncement(
+    `${isZoomed ? "day" : "month"}:${roundedMonth}:${roundedDay}:${activeMarker ? activeMarker.event.id : "none"}`,
+    `${ariaText}${eventSuffix}`,
+  );
 }
 
 function settle(now) {
